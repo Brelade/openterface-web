@@ -3,12 +3,12 @@
   "name": "Openterface Web",
   "icons": [
     {
-      "src": "app-logo-192.png",
+      "src": "/openterface-web/app-logo-192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "app-logo-512.png",
+      "src": "/openterface-web/app-logo-512.png",
       "type": "image/png",
       "sizes": "512x512"
     }

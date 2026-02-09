@@ -14,7 +14,7 @@ import { Keyboard } from './keyboard';
 import { Mouse } from './mouse';
 import { Recorder } from './recorder';
 import { SerialPort } from './serial-port';
-import { Settings } from './settings';
+import { Settings } from './settings/index.tsx';
 import { Video } from './video';
 
 export const Menu = () => {

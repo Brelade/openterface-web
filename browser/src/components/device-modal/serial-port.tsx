@@ -30,7 +30,13 @@ export const SerialPort = ({ setErrMsg, onDisconnect }: SerialPortProps) => {
 
     try {
       const port = await navigator.serial.requestPort();
-      await device.serialPort.init({ port, onDisconnect });
+      
+      // Pass the baudRate here
+      await device.serialPort.init({ 
+        port, 
+        onDisconnect,
+        baudRate: 115200 // Most Web Serial wrappers look for this key
+      });
 
       setSerialState('connected');
     } catch (err) {

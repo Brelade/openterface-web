@@ -1,4 +1,38 @@
-// Minimal service worker for PWA installability
+const CACHE_NAME = 'openterface-v1';
+const urlsToCache = [
+  '/openterface-web/',
+  '/openterface-web/index.html'
+];
+
+self.addEventListener('install', (event) => {
+  event.waitUntil(
+    caches.open(CACHE_NAME).then((cache) => {
+      return cache.addAll(urlsToCache);
+    })
+  );
+});
+
+self.addEventListener('activate', (event) => {
+  event.waitUntil(
+    caches.keys().then((cacheNames) => {
+      return Promise.all(
+        cacheNames.map((cacheName) => {
+          if (cacheName !== CACHE_NAME) {
+            return caches.delete(cacheName);
+          }
+        })
+      );
+    })
+  );
+});
+
 self.addEventListener('fetch', (event) => {
-  // You can add caching logic here later
+  event.respondWith(
+    caches.match(event.request).then((response) => {
+      return response || fetch(event.request);
+    }).catch(() => {
+      // Return a fallback response if offline
+      return caches.match('/openterface-web/index.html');
+    })
+  );
 });

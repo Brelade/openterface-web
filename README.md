@@ -3,6 +3,7 @@ To be used primarily with the Openterface KVM-Go
 
 Based on the [NanoKVM-USB](https://usbkvm.sipeed.com) browser version project.
 
+This can be accessed by visiting: https://brelade.github.io/openterface-web/
 ## Development
 
 ```shell

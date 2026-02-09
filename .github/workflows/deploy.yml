@@ -26,10 +26,15 @@ jobs:
         with:
           version: 9
 
-      - name: Install & Build
+      - name: Install
         run: |
           cd browser
           pnpm install
+          pnpm build
+
+      - name: Build
+        run: |
+          cd browser
           pnpm build
 
       - name: Upload Artifacts

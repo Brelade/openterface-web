@@ -1,0 +1,112 @@
+.keyboardContainer {
+  display: flex;
+  background-color: #1a1a1a; /* Darker background */
+  justify-content: center;
+  margin: 0 auto;
+  border-radius: 0 5px;
+  padding: 10px; /* Added slight padding for better aesthetics */
+}
+
+.simple-keyboard.hg-theme-default {
+  display: inline-block;
+  background-color: #262626; /* Keyboard base color */
+  border-radius: 5px;
+}
+
+.simple-keyboard-main.simple-keyboard {
+  width: 640px;
+  min-width: 640px;
+  background: none;
+}
+
+/* Key styling for Dark Mode */
+.simple-keyboard-main.simple-keyboard .hg-button {
+  background: #333333;
+  color: #ececec;
+  border-bottom: 1px solid #111;
+  box-shadow:
+    0 1px 3px 0 rgb(0 0 0 / 0.5),
+    0 1px 2px -1px rgb(0 0 0 / 0.5);
+}
+
+.simple-keyboard-main.simple-keyboard .hg-row:first-child {
+  margin-bottom: 10px;
+}
+
+.simple-keyboard-arrows.simple-keyboard {
+  align-self: flex-end;
+  background: none;
+}
+
+/* Adjusted selection color for better visibility in the dark */
+.simple-keyboard .hg-button.selectedButton {
+  background: #3b82f6; 
+  color: white;
+}
+
+.simple-keyboard .hg-button.emptySpace {
+  pointer-events: none;
+  background: none;
+  border: none;
+  box-shadow: none;
+}
+
+.simple-keyboard-arrows .hg-row {
+  justify-content: center;
+}
+
+.simple-keyboard-arrows .hg-button {
+  width: 50px;
+  flex-grow: 0;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  background: #333333;
+  color: #ececec;
+  box-shadow:
+    0 1px 3px 0 rgb(0 0 0 / 0.5),
+    0 1px 2px -1px rgb(0 0 0 / 0.5);
+}
+
+.controlArrows {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-flow: column;
+}
+
+.simple-keyboard-control.simple-keyboard {
+  background: none;
+}
+
+.simple-keyboard-control.simple-keyboard .hg-row:first-child {
+  margin-bottom: 10px;
+}
+
+.simple-keyboard-control .hg-button {
+  width: 50px;
+  flex-grow: 0;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  background: #333333;
+  color: #ececec;
+  box-shadow:
+    0 1px 3px 0 rgb(0 0 0 / 0.5),
+    0 1px 2px -1px rgb(0 0 0 / 0.5);
+}
+
+.hg-button.hg-functionBtn.hg-button-space {
+  width: 250px;
+}
+
+.hg-layout-mac .hg-button.hg-functionBtn.hg-button-space {
+  width: 350px;
+}
+
+.simple-keyboard .hg-highlight {
+  background: #2563eb;
+  border-bottom: 1px solid #1d4ed8;
+  color: white;
+}

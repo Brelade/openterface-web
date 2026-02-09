@@ -1,3 +1,7 @@
+packages:
+  - 'packages/*'
+  - 'apps/*'
+
 overrides:
   minimatch: ^9.0.0
   '@babel/helpers@<7.26.10': '>=7.26.10'

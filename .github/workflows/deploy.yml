@@ -30,7 +30,6 @@ jobs:
         run: |
           cd browser
           pnpm install
-          pnpm build
 
       - name: Build
         run: |

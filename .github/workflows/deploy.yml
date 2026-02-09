@@ -10,7 +10,7 @@ permissions:
   id-token: write
 
 jobs:
-  build_site:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -26,13 +26,11 @@ jobs:
         with:
           version: 9
 
-      - name: Install dependencies
-        run: pnpm install
-        working-directory: ./browser 
-
-      - name: Build
-        run: pnpm build
-        working-directory: ./browser
+      - name: Install & Build
+        run: |
+          cd browser
+          pnpm install
+          pnpm build
 
       - name: Upload Artifacts
         uses: actions/upload-pages-artifact@v3
@@ -40,7 +38,7 @@ jobs:
           path: ./browser/dist
 
   deploy:
-    needs: build_site
+    needs: build
     runs-on: ubuntu-latest
     environment:
       name: github-pages
